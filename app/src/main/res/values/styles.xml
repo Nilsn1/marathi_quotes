@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="BottomNavigationView">
+        <item name="fontFamily">@font/nunito_bold</item>
+    </style>
+
+    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="fontFamily">@font/nunito_extrabold</item>
+    </style>
+
+    <style name="navigationTheme">
+        <item name="colorPrimary">@color/text_primary</item>
+        <item name="colorControlHighlight">@color/text_primary</item>
+        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/nunito_extrabold</item>
+    </style>
+</resources>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/Main_background2"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:theme="@style/ToolbarTheme"
+                app:title=""
+                app:titleTextColor="@color/black"
+                tools:ignore="MissingConstraints">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/custom_navigation_icon"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/menu"
+                        ads:layout_constraintBottom_toBottomOf="parent"
+                        ads:layout_constraintStart_toStartOf="parent"
+                        ads:layout_constraintTop_toTopOf="parent"
+                        ads:tint="@color/black" />
+
+                    <TextView
+                        android:id="@+id/toolbar_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:text="@string/app_name"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        ads:layout_constraintBottom_toBottomOf="parent"
+                        ads:layout_constraintStart_toEndOf="@+id/custom_navigation_icon"
+                        ads:layout_constraintTop_toTopOf="parent" />
+
+                    <!--                <ImageView-->
+                    <!--                    android:id="@+id/search"-->
+                    <!--                    android:layout_width="25dp"-->
+                    <!--                    android:layout_height="25dp"-->
+                    <!--                    android:layout_marginEnd="20dp"-->
+                    <!--                    android:clickable="true"-->
+                    <!--                    android:foreground="?attr/selectableItemBackground"-->
+                    <!--                    android:scaleType="centerCrop"-->
+                    <!--                    android:src="@drawable/search"-->
+                    <!--                    android:visibility="invisible"-->
+                    <!--                    ads:layout_constraintBottom_toBottomOf="parent"-->
+                    <!--                    ads:layout_constraintEnd_toEndOf="parent"-->
+                    <!--                    ads:layout_constraintTop_toTopOf="parent" />-->
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+
+            <FrameLayout
+                android:id="@+id/mainContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/bottonNavigationView"
+                android:layout_below="@id/toolbar"
+                android:layout_marginHorizontal="10dp" />
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottonNavigationView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@color/Main_background"
+                android:theme="@style/BottomNavigationView"
+                app:itemIconSize="22dp"
+                app:itemIconTint="@drawable/bottom_nav_selector"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:menu="@menu/bottom_menu" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigationview"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@color/Main_background2"
+        android:theme="@style/navigationTheme"
+        app:headerLayout="@layout/header"
+        app:itemIconSize="22dp"
+        app:itemIconTint="@color/text_primary"
+        app:itemTextAppearance="@style/navigationTheme"
+        app:itemTextColor="@color/text_primary"
+        app:menu="@menu/sidemenu" />
+
+</androidx.drawerlayout.widget.DrawerLayout>
